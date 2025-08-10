@@ -52,6 +52,7 @@ const Booking = () => {
           </CardHeader>
           <CardContent>
            <form action="https://formsubmit.co/bookings@mldluxury.com" method="POST" className="space-y-8">
+           <form action="https://formsubmit.co/boubabaauel@gmail.com" method="POST" className="space-y-8">
              <input type="hidden" name="_subject" value="New Booking Request - MLDLUXURY" />
              <input type="hidden" name="_captcha" value="false" />
              <input type="hidden" name="_next" value={`${window.location.origin}${window.location.pathname}#/booking?success=true`} />
