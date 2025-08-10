@@ -54,14 +54,6 @@ import React from 'react';
         features: ['Three-Row Seating', 'Premium Audio', 'Advanced Safety Features'],
         image: <img alt="A sophisticated black Cadillac XT6 luxury SUV" className="w-full h-64 object-cover rounded-t-lg" src="/Screen Shot 2025-08-10 at 7.08.53 PM copy copy copy copy.png" />
       },
-      {
-        name: 'Stretch Limousine',
-        description: 'The ultimate in luxury transportation for special occasions and VIP events. Seats up to 10 passengers.',
-        capacity: 10,
-        luggage: 8,
-        features: ['Full Bar', 'LED Lighting', 'Premium Sound System', 'Privacy Partition'],
-        image: <img alt="An elegant black stretch limousine" className="w-full h-64 object-cover rounded-t-lg" src="https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=800" />
-      },
     ];
 
     const Fleet = () => {
