@@ -99,7 +99,7 @@
               <div className="text-center mb-16">
                 <h2 className="text-4xl md:text-5xl font-extrabold text-amber-400 mb-6">Service Areas</h2>
                 <p className="text-lg text-neutral-300 max-w-3xl mx-auto">
-                  We provide luxury transportation services throughout the greater New York metropolitan area and beyond.
+                  We provide luxury transportation services throughout the entire Northeast region, including but not limited to:
                 </p>
               </div>
               
@@ -131,8 +131,16 @@
               </div>
               
               <div className="text-center mt-12">
+                <div className="bg-amber-400/10 border border-amber-400/30 rounded-lg p-6 mb-8">
+                  <h3 className="text-2xl font-bold text-amber-400 mb-3">Complete Northeast Coverage</h3>
+                  <p className="text-lg text-neutral-200">
+                    MLDLUXURY serves the entire Northeast United States. From Maine to Virginia, 
+                    we provide luxury transportation services throughout all major cities, 
+                    airports, and destinations in the region.
+                  </p>
+                </div>
                 <p className="text-neutral-400 text-lg">
-                  Don't see your location? <Link to="/contact" className="text-amber-400 hover:text-amber-300 underline">Contact us</Link> for custom arrangements.
+                  Planning travel anywhere in the Northeast? <Link to="/contact" className="text-amber-400 hover:text-amber-300 underline">Contact us</Link> to arrange your luxury transportation.
                 </p>
               </div>
             </motion.div>
