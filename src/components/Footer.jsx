@@ -43,14 +43,14 @@
             <div>
               <p className="font-semibold text-lg text-amber-400 tracking-wider">Service Areas</p>
               <div className="mt-4 text-sm text-neutral-400">
-                <p className="mb-3 font-medium text-neutral-300">Complete Northeast Coverage</p>
+                <p className="mb-3 font-medium text-neutral-300">Complete Coverage</p>
                 <div className="grid grid-cols-1 gap-1">
                   <span>Manhattan • Brooklyn • Queens</span>
                   <span>The Bronx • Staten Island</span>
                   <span>Westchester • Long Island</span>
                   <span>Hudson Valley • New Jersey</span>
                   <span>Connecticut • Pennsylvania</span>
-                  <span>Upstate NY • Entire Northeast</span>
+                  <span>Upstate NY</span>
                 </div>
               </div>
             </div>
