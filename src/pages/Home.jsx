@@ -139,12 +139,12 @@ const Home = () => {
       </section>
 
       {/* Fleet Preview */}
-      <section className="py-20 relative">
+      <section className="py-32 relative">
         <div className="absolute inset-0 bg-black"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.1)_0%,transparent_70%)]"></div>
         <div className="relative z-10 container mx-auto px-4">
           <motion.div
-            className="text-center mb-16"
+            className="text-center mb-20"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -152,13 +152,13 @@ const Home = () => {
             <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
               Premium <span className="text-amber-400">Fleet</span>
             </h2>
-            <p className="text-xl text-neutral-300 max-w-3xl mx-auto font-light">
+            <p className="text-xl text-neutral-300 max-w-3xl mx-auto font-light leading-relaxed">
               Meticulously maintained vehicles that represent the pinnacle of luxury and comfort
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <motion.div
                 className="relative group overflow-hidden rounded-lg"
                 whileHover={{ scale: 1.02 }}
@@ -166,13 +166,13 @@ const Home = () => {
               >
                 <img 
                   alt="Mercedes-Benz S-Class luxury sedan" 
-                  className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110" 
+                  className="w-full h-96 object-cover transition-transform duration-500 group-hover:scale-110" 
                   src="https://storage.googleapis.com/hostinger-horizons-assets-prod/146a1b3c-9425-4b69-8a09-f6c2ecb3458d/76e426fadfc2e97c7de32a36a49a2352.jpg" 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                <div className="absolute bottom-6 left-6 right-6">
-                  <h3 className="text-2xl font-light text-white mb-2">Luxury Sedans</h3>
-                  <p className="text-neutral-300">Perfect for executive travel and airport transfers</p>
+                <div className="absolute bottom-8 left-8 right-8">
+                  <h3 className="text-3xl font-light text-white mb-4">Luxury Sedans</h3>
+                  <p className="text-lg text-neutral-300 leading-relaxed">Perfect for executive travel and airport transfers</p>
                 </div>
               </motion.div>
 
@@ -183,20 +183,21 @@ const Home = () => {
               >
                 <img 
                   alt="Cadillac Escalade luxury SUV" 
-                  className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110" 
+                  className="w-full h-96 object-cover transition-transform duration-500 group-hover:scale-110" 
                   src="https://storage.googleapis.com/hostinger-horizons-assets-prod/146a1b3c-9425-4b69-8a09-f6c2ecb3458d/829eb6474d2ae45af8f9b84d81cac549.png" 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                <div className="absolute bottom-6 left-6 right-6">
-                  <h3 className="text-2xl font-light text-white mb-2">Luxury SUVs</h3>
-                  <p className="text-neutral-300">Spacious comfort for groups and families</p>
+                <div className="absolute bottom-8 left-8 right-8">
+                  <h3 className="text-3xl font-light text-white mb-4">Luxury SUVs</h3>
+                  <p className="text-lg text-neutral-300 leading-relaxed">Spacious comfort for groups and families</p>
                 </div>
               </motion.div>
 
             </div>
+            </div>
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-16">
             <Button asChild variant="outline" size="lg" className="border-2 border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-black rounded-none px-12 py-4 text-lg font-medium tracking-wide">
               <Link to="/fleet">VIEW COMPLETE FLEET</Link>
             </Button>
