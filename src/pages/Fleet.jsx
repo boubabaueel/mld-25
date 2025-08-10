@@ -46,6 +46,22 @@ import React from 'react';
         features: ['Starlight Headliner', 'Champagne Cooler', 'Rear Entertainment System'],
         image: <img  alt="An elegant white Rolls Royce Cullinan" className="w-full h-64 object-cover rounded-t-lg" src="https://storage.googleapis.com/hostinger-horizons-assets-prod/146a1b3c-9425-4b69-8a09-f6c2ecb3458d/5663ea4a54185aacf1e9f96e1b67db9b.jpg" />
       },
+      {
+        name: 'Cadillac XT6',
+        description: 'Premium three-row luxury SUV combining style and functionality. Perfect for families or small groups. Seats up to 7.',
+        capacity: 7,
+        luggage: 6,
+        features: ['Three-Row Seating', 'Premium Audio', 'Advanced Safety Features'],
+        image: <img alt="A sophisticated black Cadillac XT6 luxury SUV" className="w-full h-64 object-cover rounded-t-lg" src="https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&w=800" />
+      },
+      {
+        name: 'Stretch Limousine',
+        description: 'The ultimate in luxury transportation for special occasions and VIP events. Seats up to 10 passengers.',
+        capacity: 10,
+        luggage: 8,
+        features: ['Full Bar', 'LED Lighting', 'Premium Sound System', 'Privacy Partition'],
+        image: <img alt="An elegant black stretch limousine" className="w-full h-64 object-cover rounded-t-lg" src="https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=800" />
+      },
     ];
 
     const Fleet = () => {
@@ -69,6 +85,7 @@ import React from 'react';
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
               {fleetData.map((vehicle, index) => (
                 <motion.div
                   key={vehicle.name}
