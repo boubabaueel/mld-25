@@ -51,7 +51,7 @@ const Home = () => {
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
         }}>
-          <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/60"></div>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(212,175,55,0.1),transparent_50%)]"></div>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(212,175,55,0.05),transparent_50%)]"></div>
         </div>
@@ -98,6 +98,7 @@ const Home = () => {
       <section className="py-20 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-neutral-900 to-black"></div>
         <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_48%,rgba(212,175,55,0.03)_49%,rgba(212,175,55,0.03)_51%,transparent_52%)]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_48%,rgba(212,175,55,0.03)_49%,rgba(212,175,55,0.03)_51%,transparent_52%)]"></div>
         <div className="relative z-10 container mx-auto px-4">
           <motion.div
             className="text-center mb-16"
@@ -141,6 +142,7 @@ const Home = () => {
       {/* Fleet Preview */}
       <section className="py-32 relative">
         <div className="absolute inset-0 bg-black"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.1)_0%,transparent_70%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.1)_0%,transparent_70%)]"></div>
         <div className="relative z-10 container mx-auto px-4">
           <motion.div
@@ -207,6 +209,7 @@ const Home = () => {
       {/* Testimonials */}
       <section className="py-20 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-neutral-900 to-black"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,transparent_40%,rgba(212,175,55,0.02)_50%,transparent_60%)]"></div>
         <div className="absolute inset-0 bg-[linear-gradient(135deg,transparent_40%,rgba(212,175,55,0.02)_50%,transparent_60%)]"></div>
         <div className="relative z-10 container mx-auto px-4">
           <motion.div

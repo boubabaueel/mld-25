@@ -36,7 +36,7 @@ const TestimonialCard = ({ quote, author, rating }) => (
 
 const Home = () => {
   return (
-    <div className="bg-white text-black">
+    <div className="bg-black text-white">
       <Helmet>
         <title>MLDLUXURY - Premier Luxury Transportation in NYC</title>
         <meta name="description" content="MLDLUXURY offers unmatched luxury car and chauffeur services in New York City. Book your premium ride today for an experience of a lifetime." />
@@ -64,18 +64,18 @@ const Home = () => {
           >
             <h1 className="text-5xl md:text-7xl font-light tracking-wide leading-tight text-white mb-6">
               Luxury Transportation
-              <span className="block text-amber-600 font-normal">Redefined</span>
+              <span className="block text-amber-400 font-normal">Redefined</span>
             </h1>
-            <p className="text-xl md:text-2xl max-w-4xl mx-auto text-gray-700 mb-8 font-light leading-relaxed">
+            <p className="text-xl md:text-2xl max-w-4xl mx-auto text-neutral-200 mb-8 font-light leading-relaxed">
               Experience the pinnacle of elegance and sophistication with New York City's premier luxury transportation service
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button asChild size="lg" className="bg-amber-600 text-white hover:bg-amber-700 rounded-none px-12 py-6 text-lg font-medium tracking-wide transition-all duration-300">
+              <Button asChild size="lg" className="bg-amber-400 text-black hover:bg-amber-500 rounded-none px-12 py-6 text-lg font-medium tracking-wide transition-all duration-300">
                 <Link to="/booking">
                   RESERVE NOW <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-2 border-black text-black hover:bg-black hover:text-white rounded-none px-12 py-6 text-lg font-medium tracking-wide">
+              <Button asChild variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-black rounded-none px-12 py-6 text-lg font-medium tracking-wide">
                 <Link to="/fleet">VIEW FLEET</Link>
               </Button>
             </div>
@@ -88,15 +88,16 @@ const Home = () => {
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          <div className="w-6 h-10 border-2 border-black rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-black rounded-full mt-2"></div>
+          <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-white rounded-full mt-2"></div>
           </div>
         </motion.div>
       </section>
 
       {/* Services Section */}
       <section className="py-20 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-50 to-white"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-900 to-black"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_48%,rgba(212,175,55,0.03)_49%,rgba(212,175,55,0.03)_51%,transparent_52%)]"></div>
         <div className="relative z-10 container mx-auto px-4">
           <motion.div
             className="text-center mb-16"
@@ -140,6 +141,7 @@ const Home = () => {
       {/* Fleet Preview */}
       <section className="py-32 relative">
         <div className="absolute inset-0 bg-black"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.1)_0%,transparent_70%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.1)_0%,transparent_70%)]"></div>
         <div className="relative z-10 container mx-auto px-4">
           <motion.div
@@ -206,6 +208,7 @@ const Home = () => {
       {/* Testimonials */}
       <section className="py-20 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-neutral-900 to-black"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,transparent_40%,rgba(212,175,55,0.02)_50%,transparent_60%)]"></div>
         <div className="absolute inset-0 bg-[linear-gradient(135deg,transparent_40%,rgba(212,175,55,0.02)_50%,transparent_60%)]"></div>
         <div className="relative z-10 container mx-auto px-4">
           <motion.div
