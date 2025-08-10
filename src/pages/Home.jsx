@@ -43,15 +43,12 @@ const Home = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center">
-        {/* Background Video/Image */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background with overlay */}
         <div className="absolute inset-0 z-0">
-          <img 
-            alt="Luxury limousine on city street at night" 
-            className="absolute inset-0 w-full h-full object-cover" 
-            src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-black via-neutral-900 to-black"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(212,175,55,0.1),transparent_50%)]"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(212,175,55,0.05),transparent_50%)]"></div>
         </div>
         
         <div className="relative z-10 container mx-auto px-4 text-center">
@@ -93,8 +90,10 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-gradient-to-b from-neutral-900 to-black">
-        <div className="container mx-auto px-4">
+      <section className="py-20 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-900 to-black"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_48%,rgba(212,175,55,0.03)_49%,rgba(212,175,55,0.03)_51%,transparent_52%)]"></div>
+        <div className="relative z-10 container mx-auto px-4">
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 20 }}
@@ -135,8 +134,10 @@ const Home = () => {
       </section>
 
       {/* Fleet Preview */}
-      <section className="py-20 bg-black">
-        <div className="container mx-auto px-4">
+      <section className="py-20 relative">
+        <div className="absolute inset-0 bg-black"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.1)_0%,transparent_70%)]"></div>
+        <div className="relative z-10 container mx-auto px-4">
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 20 }}
@@ -213,8 +214,10 @@ const Home = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-gradient-to-b from-neutral-900 to-black">
-        <div className="container mx-auto px-4">
+      <section className="py-20 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-900 to-black"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,transparent_40%,rgba(212,175,55,0.02)_50%,transparent_60%)]"></div>
+        <div className="relative z-10 container mx-auto px-4">
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 20 }}
@@ -250,8 +253,10 @@ const Home = () => {
       </section>
 
       {/* Contact CTA */}
-      <section className="py-20 bg-black">
-        <div className="container mx-auto px-4">
+      <section className="py-20 relative">
+        <div className="absolute inset-0 bg-black"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.08)_0%,transparent_50%)]"></div>
+        <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
