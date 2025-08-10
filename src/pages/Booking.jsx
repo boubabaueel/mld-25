@@ -40,7 +40,7 @@ const Booking = () => {
       // Replace these with your actual EmailJS credentials
       const result = await emailjs.send(
         'service_60kdwsj', // Replace with your EmailJS service ID
-        'YOUR_BOOKING_TEMPLATE_ID', // Replace with your EmailJS booking template ID
+        'template_7q0dj3e', // Replace with your EmailJS booking template ID
         {
           pickup_date: formData.pickup_date,
           pickup_time: formData.pickup_time,
@@ -53,7 +53,7 @@ const Booking = () => {
           special_requests: formData.special_requests,
           to_email: 'boubabaauel@gmail.com'
         },
-        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+        'EGOCLKVYBJ8Oczz1K' // Replace with your EmailJS public key
       );
 
       console.log('Booking email sent successfully:', result);
