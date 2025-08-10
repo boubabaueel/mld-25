@@ -100,7 +100,7 @@ const Booking = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="max-w-md mx-auto mb-12 p-6 bg-green-900/20 border border-green-500/30 rounded-lg text-center"
+            className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 max-w-md w-full mx-4 p-6 bg-green-900/90 backdrop-blur-sm border border-green-500/50 rounded-lg text-center shadow-2xl"
           >
             <CheckCircle className="w-12 h-12 text-green-400 mx-auto mb-4" />
             <h3 className="text-xl font-bold text-green-400 mb-2">Booking Request Submitted!</h3>
