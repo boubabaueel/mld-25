@@ -1,16 +1,68 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import { Phone, Mail, MapPin, CheckCircle } from 'lucide-react';
-import { useSearchParams } from 'react-router-dom';
+import { Phone, Mail, MapPin, CheckCircle, Loader2 } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
-  const [searchParams] = useSearchParams();
-  const isSuccess = searchParams.get('success') === 'true';
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: ''
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      // Replace these with your actual EmailJS credentials
+      const result = await emailjs.send(
+        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
+        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: 'boubabaauel@gmail.com'
+        },
+        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+      );
+
+      console.log('Email sent successfully:', result);
+      setIsSuccess(true);
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Email send failed:', error);
+      alert('Failed to send message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className="bg-black text-white py-20">
@@ -53,33 +105,84 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl font-bold mb-6 text-amber-400">Send Us a Message</h2>
-            <form action="https://formsubmit.co/contact@mldluxury.com" method="POST" className="space-y-6">
-              <input type="hidden" name="_subject" value="New Contact Form Submission - MLDLUXURY" />
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_next" value={`${window.location.origin}${window.location.pathname}#/contact?success=true`} />
-              <input type="hidden" name="_template" value="table" />
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <Label htmlFor="name">Full Name</Label>
-                <Input id="name" name="name" placeholder="Your Name" required className="mt-2 bg-neutral-800 border-neutral-700 text-white"/>
+                <Input 
+                  id="name" 
+                  name="name" 
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  placeholder="Your Name" 
+                  required 
+                  className="mt-2 bg-neutral-800 border-neutral-700 text-white"
+                />
               </div>
               <div>
                 <Label htmlFor="email">Email Address</Label>
-                <Input id="email" name="email" type="email" placeholder="your.email@example.com" required className="mt-2 bg-neutral-800 border-neutral-700 text-white"/>
+                <Input 
+                  id="email" 
+                  name="email" 
+                  type="email" 
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  placeholder="your.email@example.com" 
+                  required 
+                  className="mt-2 bg-neutral-800 border-neutral-700 text-white"
+                />
               </div>
               <div>
                 <Label htmlFor="phone">Phone Number</Label>
-                <Input id="phone" name="phone" type="tel" placeholder="(123) 456-7890" required className="mt-2 bg-neutral-800 border-neutral-700 text-white"/>
+                <Input 
+                  id="phone" 
+                  name="phone" 
+                  type="tel" 
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                  placeholder="(123) 456-7890" 
+                  required 
+                  className="mt-2 bg-neutral-800 border-neutral-700 text-white"
+                />
               </div>
-               <div>
+              <div>
                 <Label htmlFor="subject">Subject</Label>
-                <Input id="subject" name="subject" placeholder="e.g., Booking Inquiry" required className="mt-2 bg-neutral-800 border-neutral-700 text-white"/>
+                <Input 
+                  id="subject" 
+                  name="subject" 
+                  value={formData.subject}
+                  onChange={handleInputChange}
+                  placeholder="e.g., Booking Inquiry" 
+                  required 
+                  className="mt-2 bg-neutral-800 border-neutral-700 text-white"
+                />
               </div>
               <div>
                 <Label htmlFor="message">Message</Label>
-                <Textarea id="message" name="message" rows={5} placeholder="Your message here..." required className="mt-2 bg-neutral-800 border-neutral-700 text-white"/>
+                <Textarea 
+                  id="message" 
+                  name="message" 
+                  rows={5} 
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  placeholder="Your message here..." 
+                  required 
+                  className="mt-2 bg-neutral-800 border-neutral-700 text-white"
+                />
               </div>
-              <Button type="submit" size="lg" className="w-full bg-amber-400 text-black hover:bg-amber-500 font-bold">
-                Send Message
+              <Button 
+                type="submit" 
+                size="lg" 
+                disabled={isSubmitting}
+                className="w-full bg-amber-400 text-black hover:bg-amber-500 font-bold"
+              >
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  'Send Message'
+                )}
               </Button>
             </form>
           </motion.div>
@@ -103,7 +206,7 @@ const Contact = () => {
                     <Mail className="w-8 h-8 text-amber-400 mr-4 mt-1"/>
                     <div>
                         <p className="font-semibold">Email Us</p>
-                        <a href="mailto:contact@mldluxury.com" className="text-neutral-400 hover:text-amber-300 transition">contact@mldluxury.com</a>
+                        <a href="mailto:boubabaauel@gmail.com" className="text-neutral-400 hover:text-amber-300 transition">boubabaauel@gmail.com</a>
                     </div>
                 </div>
                  <div className="flex items-start">
@@ -116,7 +219,7 @@ const Contact = () => {
              </div>
              <div className="mt-10">
                <iframe 
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=-74.00833129882814%2C40.71087593255648%2C-73.98394584655763%2C40.72517881992167&amp;layer=mapnik" 
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=-74.00833129882814%2C40.71087593255648%2C-73.98394584655763%2C40.72517881992167&layer=mapnik" 
                   style={{border: 0, borderRadius: '8px'}} 
                   className="w-full h-80"
                   allowFullScreen="" 
