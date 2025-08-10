@@ -158,6 +158,7 @@ const Home = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <motion.div
               className="relative group overflow-hidden rounded-lg"
               whileHover={{ scale: 1.02 }}
@@ -192,22 +193,6 @@ const Home = () => {
               </div>
             </motion.div>
 
-            <motion.div
-              className="relative group overflow-hidden rounded-lg"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-            >
-              <img 
-                alt="Mercedes-Benz Sprinter luxury van" 
-                className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110" 
-                src="https://storage.googleapis.com/hostinger-horizons-assets-prod/146a1b3c-9425-4b69-8a09-f6c2ecb3458d/d11f20e8280f1013887baf3ddb8c6c69.png" 
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-              <div className="absolute bottom-6 left-6 right-6">
-                <h3 className="text-2xl font-light text-white mb-2">Executive Vans</h3>
-                <p className="text-neutral-300">Ideal for larger groups and events</p>
-              </div>
-            </motion.div>
           </div>
 
           <div className="text-center mt-12">
