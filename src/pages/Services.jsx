@@ -90,60 +90,6 @@
               </Button>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.7 }}
-              className="mt-32"
-            >
-              <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-extrabold text-amber-400 mb-6">Service Areas</h2>
-                <p className="text-lg text-neutral-300 max-w-3xl mx-auto">
-                  We provide luxury transportation services throughout the entire Northeast region, including but not limited to:
-                </p>
-              </div>
-              
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                {[
-                  'Manhattan',
-                  'Brooklyn', 
-                  'Queens',
-                  'The Bronx',
-                  'Staten Island',
-                  'Westchester County',
-                  'Long Island',
-                  'Hudson Valley',
-                  'New Jersey',
-                  'Connecticut',
-                  'Pennsylvania',
-                  'Upstate New York'
-                ].map((area, index) => (
-                  <motion.div
-                    key={area}
-                    className="bg-black p-4 rounded-lg border border-neutral-800 text-center hover:border-amber-400 transition-colors duration-300"
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.3, delay: index * 0.05 }}
-                  >
-                    <h3 className="text-lg font-semibold text-white">{area}</h3>
-                  </motion.div>
-                ))}
-              </div>
-              
-              <div className="text-center mt-12">
-                <div className="bg-amber-400/10 border border-amber-400/30 rounded-lg p-6 mb-8">
-                  <h3 className="text-2xl font-bold text-amber-400 mb-3">Complete Northeast Coverage</h3>
-                  <p className="text-lg text-neutral-200">
-                    MLDLUXURY serves the entire Northeast United States. From Maine to Virginia, 
-                    we provide luxury transportation services throughout all major cities, 
-                    airports, and destinations in the region.
-                  </p>
-                </div>
-                <p className="text-neutral-400 text-lg">
-                  Planning travel anywhere in the Northeast? <Link to="/contact" className="text-amber-400 hover:text-amber-300 underline">Contact us</Link> to arrange your luxury transportation.
-                </p>
-              </div>
-            </motion.div>
           </div>
         </div>
       );
