@@ -17,23 +17,6 @@ const ServiceCard = ({ icon, title, description }) => (
   </motion.div>
 );
 
-const TestimonialCard = ({ quote, author, rating }) => (
-  <motion.div
-    className="bg-white/5 backdrop-blur-sm p-6 rounded-lg border border-white/10"
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.6 }}
-  >
-    <div className="flex mb-4">
-      {[...Array(rating)].map((_, i) => (
-        <Star key={i} className="w-5 h-5 text-amber-400 fill-current" />
-      ))}
-    </div>
-    <p className="text-neutral-300 mb-4 italic">"{quote}"</p>
-    <p className="text-amber-400 font-semibold">- {author}</p>
-  </motion.div>
-);
-
 const Home = () => {
   return (
     <div className="bg-black text-white">
@@ -200,45 +183,6 @@ const Home = () => {
             <Button asChild variant="outline" size="lg" className="border-2 border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-black rounded-none px-12 py-4 text-lg font-medium tracking-wide">
               <Link to="/fleet">VIEW COMPLETE FLEET</Link>
             </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-20 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-neutral-900 to-black"></div>
-        <div className="absolute inset-0 bg-[linear-gradient(135deg,transparent_40%,rgba(212,175,55,0.02)_50%,transparent_60%)]"></div>
-        <div className="relative z-10 container mx-auto px-4">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
-              Client <span className="text-amber-400">Testimonials</span>
-            </h2>
-            <p className="text-xl text-neutral-300 max-w-3xl mx-auto font-light">
-              Hear what our distinguished clients have to say about their experience
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <TestimonialCard
-              quote="Exceptional service from start to finish. The vehicle was immaculate and the chauffeur was professional and courteous."
-              author="Sarah Johnson, CEO"
-              rating={5}
-            />
-            <TestimonialCard
-              quote="MLDLUXURY made our wedding day perfect. The attention to detail and luxury service exceeded our expectations."
-              author="Michael & Lisa Chen"
-              rating={5}
-            />
-            <TestimonialCard
-              quote="Reliable, punctual, and luxurious. This is now my go-to service for all corporate travel needs in NYC."
-              author="David Rodriguez, Executive"
-              rating={5}
-            />
           </div>
         </div>
       </section>
