@@ -105,7 +105,7 @@ const Booking = () => {
             <CheckCircle className="w-12 h-12 text-green-400 mx-auto mb-4" />
             <h3 className="text-xl font-bold text-green-400 mb-2">Booking Request Submitted!</h3>
             <p className="text-neutral-300">
-              Thank you for choosing MLDLUXURY. We'll contact you within 2 hours to confirm your reservation.
+              Thank you for choosing MLDLUXURY. We'll contact you soon to confirm your reservation.
             </p>
           </motion.div>
         )}

@@ -92,7 +92,7 @@ const Contact = () => {
             <CheckCircle className="w-12 h-12 text-green-400 mx-auto mb-4" />
             <h3 className="text-xl font-bold text-green-400 mb-2">Message Sent Successfully!</h3>
             <p className="text-neutral-300">
-              Thank you for contacting MLDLUXURY. We'll get back to you within 24 hours.
+              Thank you for contacting MLDLUXURY. We'll get back to you soon.
             </p>
           </motion.div>
         )}
