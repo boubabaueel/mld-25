@@ -1,182 +1,302 @@
 import React from 'react';
-    import { motion } from 'framer-motion';
-    import { Helmet } from 'react-helmet';
-    import { Link } from 'react-router-dom';
-    import { Button } from '../components/ui/button';
-    import { ArrowRight, Car, Clock, ShieldCheck } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
+import { Button } from '../components/ui/button';
+import { ArrowRight, Phone, Mail, MapPin, Star, Shield, Clock, Users } from 'lucide-react';
 
-    const FeatureCard = ({ icon, title, description }) => (
-      <motion.div
-        className="bg-black/50 backdrop-blur-sm p-6 rounded-lg text-center border border-white/10"
-        whileHover={{ scale: 1.05, backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
-        transition={{ duration: 0.3 }}
-      >
-        <div className="flex justify-center mb-4 text-amber-400">{icon}</div>
-        <h3 className="text-xl font-bold mb-2 text-white">{title}</h3>
-        <p className="text-neutral-400">{description}</p>
-      </motion.div>
-    );
+const ServiceCard = ({ icon, title, description }) => (
+  <motion.div
+    className="bg-white/5 backdrop-blur-sm p-8 rounded-lg text-center border border-white/10 hover:border-amber-400/50 transition-all duration-300"
+    whileHover={{ y: -5, backgroundColor: 'rgba(255, 255, 255, 0.08)' }}
+    transition={{ duration: 0.3 }}
+  >
+    <div className="flex justify-center mb-6 text-amber-400">{icon}</div>
+    <h3 className="text-xl font-semibold mb-4 text-white">{title}</h3>
+    <p className="text-neutral-300 leading-relaxed">{description}</p>
+  </motion.div>
+);
 
-    const FleetHighlightCard = ({ name, children }) => (
-      <motion.div 
-        className="relative overflow-hidden rounded-lg group"
-        whileHover="hover"
-      >
-        {children}
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-end p-6">
-          <motion.h3 
-            className="text-2xl font-bold text-white"
-            initial={{ y: 20, opacity: 0 }}
-            variants={{ hover: { y: 0, opacity: 1 } }}
-            transition={{ duration: 0.3 }}
+const TestimonialCard = ({ quote, author, rating }) => (
+  <motion.div
+    className="bg-white/5 backdrop-blur-sm p-6 rounded-lg border border-white/10"
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6 }}
+  >
+    <div className="flex mb-4">
+      {[...Array(rating)].map((_, i) => (
+        <Star key={i} className="w-5 h-5 text-amber-400 fill-current" />
+      ))}
+    </div>
+    <p className="text-neutral-300 mb-4 italic">"{quote}"</p>
+    <p className="text-amber-400 font-semibold">- {author}</p>
+  </motion.div>
+);
+
+const Home = () => {
+  return (
+    <div className="bg-black text-white">
+      <Helmet>
+        <title>MLDLUXURY - Premier Luxury Transportation in NYC</title>
+        <meta name="description" content="MLDLUXURY offers unmatched luxury car and chauffeur services in New York City. Book your premium ride today for an experience of a lifetime." />
+      </Helmet>
+
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center">
+        {/* Background Video/Image */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            alt="Luxury limousine on city street at night" 
+            className="absolute inset-0 w-full h-full object-cover" 
+            src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/90"></div>
+        </div>
+        
+        <div className="relative z-10 container mx-auto px-4 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
           >
-            {name}
-          </motion.h3>
-        </div>
-      </motion.div>
-    );
-
-
-    const Home = () => {
-      return (
-        <div className="bg-transparent text-white">
-          <Helmet>
-            <title>MLDLUXURY - Premier Luxury Transportation in NYC</title>
-            <meta name="description" content="MLDLUXURY offers unmatched luxury car and chauffeur services in New York City. Book your premium ride today for an experience of a lifetime." />
-          </Helmet>
-
-          {/* Hero Section */}
-          <section className="relative h-screen flex items-center justify-center text-center px-4 overflow-hidden">
-            {/* Background Image */}
-            <div className="absolute inset-0 z-0">
-              <img 
-                alt="Luxury car interior with city lights in background" 
-                className="absolute inset-0 w-full h-full object-cover" 
-                src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-              />
-              {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/80"></div>
-              {/* Additional overlay for better text readability */}
-              <div className="absolute inset-0 bg-black/40"></div>
+            <h1 className="text-5xl md:text-7xl font-light tracking-wide leading-tight text-white mb-6">
+              Luxury Transportation
+              <span className="block text-amber-400 font-normal">Redefined</span>
+            </h1>
+            <p className="text-xl md:text-2xl max-w-4xl mx-auto text-neutral-200 mb-8 font-light leading-relaxed">
+              Experience the pinnacle of elegance and sophistication with New York City's premier luxury transportation service
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button asChild size="lg" className="bg-amber-400 text-black hover:bg-amber-500 rounded-none px-12 py-6 text-lg font-medium tracking-wide transition-all duration-300">
+                <Link to="/booking">
+                  RESERVE NOW <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-black rounded-none px-12 py-6 text-lg font-medium tracking-wide">
+                <Link to="/fleet">VIEW FLEET</Link>
+              </Button>
             </div>
-            
-            <div className="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
+          </motion.div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        >
+          <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-white rounded-full mt-2"></div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-20 bg-gradient-to-b from-neutral-900 to-black">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
+              Our <span className="text-amber-400">Services</span>
+            </h2>
+            <p className="text-xl text-neutral-300 max-w-3xl mx-auto font-light">
+              From corporate travel to special occasions, we provide unparalleled luxury transportation solutions
+            </p>
+          </motion.div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <ServiceCard
+              icon={<Shield size={48} />}
+              title="Airport Transfers"
+              description="Reliable and punctual service to all NYC airports with flight tracking and meet & greet service."
+            />
+            <ServiceCard
+              icon={<Users size={48} />}
+              title="Corporate Travel"
+              description="Professional transportation for executives, meetings, and corporate events with discretion guaranteed."
+            />
+            <ServiceCard
+              icon={<Star size={48} />}
+              title="Special Events"
+              description="Make your wedding, prom, or celebration unforgettable with our luxury vehicle collection."
+            />
+            <ServiceCard
+              icon={<Clock size={48} />}
+              title="Hourly Service"
+              description="Flexible hourly rates for shopping, tours, or any occasion requiring dedicated transportation."
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Fleet Preview */}
+      <section className="py-20 bg-black">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
+              Premium <span className="text-amber-400">Fleet</span>
+            </h2>
+            <p className="text-xl text-neutral-300 max-w-3xl mx-auto font-light">
+              Meticulously maintained vehicles that represent the pinnacle of luxury and comfort
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <motion.div
-              className="relative z-30"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
+              className="relative group overflow-hidden rounded-lg"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
             >
-              <h1 className="text-4xl md:text-7xl font-extrabold tracking-tight leading-tight text-white drop-shadow-lg">
-                Experience Unrivaled Luxury <br /> on the Streets of New York
-              </h1>
-              <p className="mt-6 text-lg md:text-xl max-w-3xl mx-auto text-neutral-200">
-                Your journey to sophistication begins here. Professional chauffeurs, immaculate fleet.
-              </p>
-              <motion.div
-                className="mt-10"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Button asChild size="lg" className="bg-amber-400 text-black hover:bg-amber-500 rounded-full px-10 py-7 text-xl font-bold transition-all duration-300 shadow-lg shadow-amber-400/20">
-                  <Link to="/booking">
-                    Book Your Ride <ArrowRight className="ml-2 h-6 w-6" />
-                  </Link>
-                </Button>
-              </motion.div>
-            </motion.div>
-          </section>
-
-          {/* Features Section */}
-          <section className="py-20 relative">
-            {/* Background for Features Section */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black via-neutral-900 to-black"></div>
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_20%,rgba(212,175,55,0.1),transparent_50%)]"></div>
-              <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_80%,rgba(212,175,55,0.1),transparent_50%)]"></div>
-            </div>
-            <div className="container mx-auto px-4">
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-                Why Choose <span className="text-amber-400">MLDLUXURY</span>?
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <FeatureCard
-                  icon={<Car size={48} />}
-                  title="Pristine Fleet"
-                  description="Our vehicles are meticulously maintained and detailed for your comfort and safety."
-                />
-                <FeatureCard
-                  icon={<ShieldCheck size={48} />}
-                  title="Professional Chauffeurs"
-                  description="Courteous, discreet, and highly-trained drivers dedicated to your service."
-                />
-                <FeatureCard
-                  icon={<Clock size={48} />}
-                  title="Punctuality Guaranteed"
-                  description="We value your time. Expect prompt and reliable service, every time."
-                />
-              </div>
-            </div>
-          </section>
-
-          {/* Fleet Highlights */}
-          <section className="py-20 relative">
-            {/* Background for Fleet Section */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black via-neutral-800 to-neutral-900"></div>
-            <div className="absolute inset-0 opacity-5">
               <img 
-                alt="Abstract luxury pattern" 
-                className="w-full h-full object-cover" 
-                src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                alt="Mercedes-Benz S-Class luxury sedan" 
+                className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110" 
+                src="https://storage.googleapis.com/hostinger-horizons-assets-prod/146a1b3c-9425-4b69-8a09-f6c2ecb3458d/76e426fadfc2e97c7de32a36a49a2352.jpg" 
               />
-            </div>
-             <div className="container mx-auto px-4">
-                <div className="relative z-10">
-                <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Our Premier Fleet</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                  <FleetHighlightCard name="Mercedes-Benz S 580">
-                    <img  alt="Sleek black Mercedes-Benz S 580" src="https://storage.googleapis.com/hostinger-horizons-assets-prod/146a1b3c-9425-4b69-8a09-f6c2ecb3458d/76e426fadfc2e97c7de32a36a49a2352.jpg" />
-                  </FleetHighlightCard>
-                  <FleetHighlightCard name="Cadillac Escalade">
-                    <img  alt="Black Cadillac Escalade" src="https://storage.googleapis.com/hostinger-horizons-assets-prod/146a1b3c-9425-4b69-8a09-f6c2ecb3458d/829eb6474d2ae45af8f9b84d81cac549.png" />
-                  </FleetHighlightCard>
-                  <FleetHighlightCard name="Mercedes-Benz Sprinter">
-                    <img  alt="A spacious and luxurious Mercedes-Benz Sprinter Van" src="https://storage.googleapis.com/hostinger-horizons-assets-prod/146a1b3c-9425-4b69-8a09-f6c2ecb3458d/d11f20e8280f1013887baf3ddb8c6c69.png" />
-                  </FleetHighlightCard>
-                  <FleetHighlightCard name="Rolls Royce Cullinan">
-                     <img  alt="Luxurious Rolls Royce Cullinan SUV" src="https://storage.googleapis.com/hostinger-horizons-assets-prod/146a1b3c-9425-4b69-8a09-f6c2ecb3458d/5663ea4a54185aacf1e9f96e1b67db9b.jpg" />
-                  </FleetHighlightCard>
-                </div>
-                <div className="text-center mt-12">
-                   <Button asChild variant="outline" size="lg" className="border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-black transition-colors rounded-full px-8 py-4 text-lg">
-                      <Link to="/fleet">View All Vehicles</Link>
-                   </Button>
-                </div>
-                </div>
-             </div>
-          </section>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+              <div className="absolute bottom-6 left-6 right-6">
+                <h3 className="text-2xl font-light text-white mb-2">Luxury Sedans</h3>
+                <p className="text-neutral-300">Perfect for executive travel and airport transfers</p>
+              </div>
+            </motion.div>
 
-          {/* CTA Section */}
-          <section className="bg-gradient-to-r from-amber-500 to-amber-400 text-black py-20">
-             <div className="container mx-auto px-4 text-center">
-                <h2 className="text-3xl md:text-4xl font-bold">Ready for the Ultimate Travel Experience?</h2>
-                <p className="mt-4 text-lg max-w-2xl mx-auto">
-                   Don't settle for anything less than the best. Reserve your luxury vehicle today and elevate your New York City journey.
-                </p>
-                <motion.div 
-                  className="mt-8"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                   <Button asChild size="lg" className="bg-black text-white hover:bg-neutral-800 rounded-full px-10 py-7 text-xl font-bold transition-all duration-300">
-                      <Link to="/contact">Contact Us Now</Link>
-                   </Button>
-                </motion.div>
-             </div>
-          </section>
+            <motion.div
+              className="relative group overflow-hidden rounded-lg"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+            >
+              <img 
+                alt="Cadillac Escalade luxury SUV" 
+                className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110" 
+                src="https://storage.googleapis.com/hostinger-horizons-assets-prod/146a1b3c-9425-4b69-8a09-f6c2ecb3458d/829eb6474d2ae45af8f9b84d81cac549.png" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+              <div className="absolute bottom-6 left-6 right-6">
+                <h3 className="text-2xl font-light text-white mb-2">Luxury SUVs</h3>
+                <p className="text-neutral-300">Spacious comfort for groups and families</p>
+              </div>
+            </motion.div>
 
+            <motion.div
+              className="relative group overflow-hidden rounded-lg"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+            >
+              <img 
+                alt="Mercedes-Benz Sprinter luxury van" 
+                className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110" 
+                src="https://storage.googleapis.com/hostinger-horizons-assets-prod/146a1b3c-9425-4b69-8a09-f6c2ecb3458d/d11f20e8280f1013887baf3ddb8c6c69.png" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+              <div className="absolute bottom-6 left-6 right-6">
+                <h3 className="text-2xl font-light text-white mb-2">Executive Vans</h3>
+                <p className="text-neutral-300">Ideal for larger groups and events</p>
+              </div>
+            </motion.div>
+          </div>
+
+          <div className="text-center mt-12">
+            <Button asChild variant="outline" size="lg" className="border-2 border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-black rounded-none px-12 py-4 text-lg font-medium tracking-wide">
+              <Link to="/fleet">VIEW COMPLETE FLEET</Link>
+            </Button>
+          </div>
         </div>
-      );
-    };
+      </section>
 
-    export default Home;
+      {/* Testimonials */}
+      <section className="py-20 bg-gradient-to-b from-neutral-900 to-black">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
+              Client <span className="text-amber-400">Testimonials</span>
+            </h2>
+            <p className="text-xl text-neutral-300 max-w-3xl mx-auto font-light">
+              Hear what our distinguished clients have to say about their experience
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <TestimonialCard
+              quote="Exceptional service from start to finish. The vehicle was immaculate and the chauffeur was professional and courteous."
+              author="Sarah Johnson, CEO"
+              rating={5}
+            />
+            <TestimonialCard
+              quote="MLDLUXURY made our wedding day perfect. The attention to detail and luxury service exceeded our expectations."
+              author="Michael & Lisa Chen"
+              rating={5}
+            />
+            <TestimonialCard
+              quote="Reliable, punctual, and luxurious. This is now my go-to service for all corporate travel needs in NYC."
+              author="David Rodriguez, Executive"
+              rating={5}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Contact CTA */}
+      <section className="py-20 bg-black">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
+                Ready to Experience <span className="text-amber-400">Luxury</span>?
+              </h2>
+              <p className="text-xl text-neutral-300 mb-12 font-light max-w-2xl mx-auto">
+                Contact us today to reserve your premium transportation experience in New York City
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div className="flex flex-col items-center">
+                  <Phone className="w-8 h-8 text-amber-400 mb-4" />
+                  <h3 className="text-lg font-medium text-white mb-2">Call Us</h3>
+                  <p className="text-neutral-300">(123) 456-7890</p>
+                </div>
+                <div className="flex flex-col items-center">
+                  <Mail className="w-8 h-8 text-amber-400 mb-4" />
+                  <h3 className="text-lg font-medium text-white mb-2">Email Us</h3>
+                  <p className="text-neutral-300">contact@mldluxury.com</p>
+                </div>
+                <div className="flex flex-col items-center">
+                  <MapPin className="w-8 h-8 text-amber-400 mb-4" />
+                  <h3 className="text-lg font-medium text-white mb-2">Visit Us</h3>
+                  <p className="text-neutral-300">123 Luxury Lane, NYC</p>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button asChild size="lg" className="bg-amber-400 text-black hover:bg-amber-500 rounded-none px-12 py-6 text-lg font-medium tracking-wide">
+                  <Link to="/booking">BOOK NOW</Link>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-black rounded-none px-12 py-6 text-lg font-medium tracking-wide">
+                  <Link to="/contact">GET QUOTE</Link>
+                </Button>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Home;
