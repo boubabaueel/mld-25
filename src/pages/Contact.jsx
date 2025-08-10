@@ -53,7 +53,7 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl font-bold mb-6 text-amber-400">Send Us a Message</h2>
-            <form action="https://formsubmit.co/your-email@example.com" method="POST" className="space-y-6">
+            <form action="https://formsubmit.co/contact@mldluxury.com" method="POST" className="space-y-6">
               <input type="hidden" name="_subject" value="New Contact Form Submission - MLDLUXURY" />
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_next" value={`${window.location.origin}${window.location.pathname}#/contact?success=true`} />
