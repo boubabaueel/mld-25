@@ -6,20 +6,10 @@
     import { Input } from '@/components/ui/input';
     import { Label } from '@/components/ui/label';
     import { Textarea } from '@/components/ui/textarea';
-    import { useToast } from '@/components/ui/use-toast';
     import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
     import { Calendar, Clock, Users, MapPin, Mail, Phone, MessageCircle } from 'lucide-react';
 
     const Booking = () => {
-      const { toast } = useToast();
-
-      const handleSubmit = (e) => {
-        e.preventDefault();
-        toast({
-          title: "🚧 Feature In Progress",
-          description: "This feature isn't implemented yet—but don't worry! You can request it in your next prompt! 🚀",
-        });
-      };
 
       return (
         <div className="bg-neutral-900 text-white py-20">
@@ -45,54 +35,57 @@
                 <CardTitle className="text-amber-400 text-2xl">Booking Details</CardTitle>
               </CardHeader>
               <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-8">
+               <form action="https://formsubmit.co/bookings@mldluxury.com" method="POST" className="space-y-8">
+                 <input type="hidden" name="_subject" value="New Booking Request - MLDLUXURY" />
+                 <input type="hidden" name="_captcha" value="false" />
+                 <input type="hidden" name="_next" value="https://mldluxury.com/#/booking?success=true" />
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {/* Trip Details */}
                     <div className="space-y-6">
                       <div className="space-y-2">
                         <Label htmlFor="date" className="flex items-center"><Calendar className="mr-2 h-4 w-4 text-amber-400" />Pickup Date</Label>
-                        <Input id="date" type="date" className="bg-neutral-800 border-neutral-700 text-white" />
+                       <Input id="date" name="pickup_date" type="date" required className="bg-neutral-800 border-neutral-700 text-white" />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="time" className="flex items-center"><Clock className="mr-2 h-4 w-4 text-amber-400" />Pickup Time</Label>
-                        <Input id="time" type="time" className="bg-neutral-800 border-neutral-700 text-white" />
+                       <Input id="time" name="pickup_time" type="time" required className="bg-neutral-800 border-neutral-700 text-white" />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="passengers" className="flex items-center"><Users className="mr-2 h-4 w-4 text-amber-400" />Number of Passengers</Label>
-                        <Input id="passengers" type="number" min="1" placeholder="e.g., 2" className="bg-neutral-800 border-neutral-700 text-white" />
+                       <Input id="passengers" name="passengers" type="number" min="1" placeholder="e.g., 2" required className="bg-neutral-800 border-neutral-700 text-white" />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="pickup" className="flex items-center"><MapPin className="mr-2 h-4 w-4 text-amber-400" />Pickup Location</Label>
-                        <Input id="pickup" placeholder="e.g., 123 Main St, New York, NY" className="bg-neutral-800 border-neutral-700 text-white" />
+                       <Input id="pickup" name="pickup_location" placeholder="e.g., 123 Main St, New York, NY" required className="bg-neutral-800 border-neutral-700 text-white" />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="dropoff" className="flex items-center"><MapPin className="mr-2 h-4 w-4 text-amber-400" />Drop-off Location</Label>
-                        <Input id="dropoff" placeholder="e.g., JFK Airport" className="bg-neutral-800 border-neutral-700 text-white" />
+                       <Input id="dropoff" name="dropoff_location" placeholder="e.g., JFK Airport" required className="bg-neutral-800 border-neutral-700 text-white" />
                       </div>
                     </div>
                     {/* Personal Details */}
                     <div className="space-y-6">
                        <div className="space-y-2">
                         <Label htmlFor="name" className="flex items-center"><Users className="mr-2 h-4 w-4 text-amber-400" />Full Name</Label>
-                        <Input id="name" placeholder="John Doe" className="bg-neutral-800 border-neutral-700 text-white" />
+                       <Input id="name" name="name" placeholder="John Doe" required className="bg-neutral-800 border-neutral-700 text-white" />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="email" className="flex items-center"><Mail className="mr-2 h-4 w-4 text-amber-400" />Email Address</Label>
-                        <Input id="email" type="email" placeholder="john.doe@example.com" className="bg-neutral-800 border-neutral-700 text-white" />
+                       <Input id="email" name="email" type="email" placeholder="john.doe@example.com" required className="bg-neutral-800 border-neutral-700 text-white" />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="phone" className="flex items-center"><Phone className="mr-2 h-4 w-4 text-amber-400" />Phone Number</Label>
-                        <Input id="phone" type="tel" placeholder="(123) 456-7890" className="bg-neutral-800 border-neutral-700 text-white" />
+                       <Input id="phone" name="phone" type="tel" placeholder="(123) 456-7890" required className="bg-neutral-800 border-neutral-700 text-white" />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="notes" className="flex items-center"><MessageCircle className="mr-2 h-4 w-4 text-amber-400" />Special Requests</Label>
-                        <Textarea id="notes" placeholder="e.g., Child seat needed, specific route preference." className="bg-neutral-800 border-neutral-700 text-white" />
+                       <Textarea id="notes" name="special_requests" placeholder="e.g., Child seat needed, specific route preference." className="bg-neutral-800 border-neutral-700 text-white" />
                       </div>
                     </div>
                   </div>
                   <div className="pt-4">
                     <Button type="submit" size="lg" className="w-full bg-amber-400 text-black hover:bg-amber-500 font-bold text-lg">
-                      Request Booking
+                     Submit Booking Request
                     </Button>
                   </div>
                 </form>

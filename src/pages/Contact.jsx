@@ -6,19 +6,9 @@
     import { Input } from '@/components/ui/input';
     import { Label } from '@/components/ui/label';
     import { Textarea } from '@/components/ui/textarea';
-    import { useToast } from '@/components/ui/use-toast';
     import { Phone, Mail, MapPin } from 'lucide-react';
 
     const Contact = () => {
-      const { toast } = useToast();
-
-      const handleSubmit = (e) => {
-        e.preventDefault();
-        toast({
-          title: "📬 Message Sent!",
-          description: "Thank you for reaching out. We will get back to you shortly.",
-        });
-      };
 
       return (
         <div className="bg-black text-white py-20">
@@ -47,25 +37,28 @@
                 transition={{ duration: 0.8 }}
               >
                 <h2 className="text-3xl font-bold mb-6 text-amber-400">Send Us a Message</h2>
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form action="https://formsubmit.co/contact@mldluxury.com" method="POST" className="space-y-6">
+                  <input type="hidden" name="_subject" value="New Contact Form Submission - MLDLUXURY" />
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input type="hidden" name="_next" value="https://mldluxury.com/#/contact?success=true" />
                   <div>
                     <Label htmlFor="name">Full Name</Label>
-                    <Input id="name" placeholder="Your Name" className="mt-2 bg-neutral-800 border-neutral-700 text-white"/>
+                    <Input id="name" name="name" placeholder="Your Name" required className="mt-2 bg-neutral-800 border-neutral-700 text-white"/>
                   </div>
                   <div>
                     <Label htmlFor="email">Email Address</Label>
-                    <Input id="email" type="email" placeholder="your.email@example.com" className="mt-2 bg-neutral-800 border-neutral-700 text-white"/>
+                    <Input id="email" name="email" type="email" placeholder="your.email@example.com" required className="mt-2 bg-neutral-800 border-neutral-700 text-white"/>
                   </div>
                    <div>
                     <Label htmlFor="subject">Subject</Label>
-                    <Input id="subject" placeholder="e.g., Booking Inquiry" className="mt-2 bg-neutral-800 border-neutral-700 text-white"/>
+                    <Input id="subject" name="subject" placeholder="e.g., Booking Inquiry" required className="mt-2 bg-neutral-800 border-neutral-700 text-white"/>
                   </div>
                   <div>
                     <Label htmlFor="message">Message</Label>
-                    <Textarea id="message" rows={5} placeholder="Your message here..." className="mt-2 bg-neutral-800 border-neutral-700 text-white"/>
+                    <Textarea id="message" name="message" rows={5} placeholder="Your message here..." required className="mt-2 bg-neutral-800 border-neutral-700 text-white"/>
                   </div>
                   <Button type="submit" size="lg" className="w-full bg-amber-400 text-black hover:bg-amber-500 font-bold">
-                    Submit
+                    Send Message
                   </Button>
                 </form>
               </motion.div>
