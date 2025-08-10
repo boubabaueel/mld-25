@@ -158,41 +158,42 @@ const Home = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <motion.div
-              className="relative group overflow-hidden rounded-lg"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-            >
-              <img 
-                alt="Mercedes-Benz S-Class luxury sedan" 
-                className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110" 
-                src="https://storage.googleapis.com/hostinger-horizons-assets-prod/146a1b3c-9425-4b69-8a09-f6c2ecb3458d/76e426fadfc2e97c7de32a36a49a2352.jpg" 
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-              <div className="absolute bottom-6 left-6 right-6">
-                <h3 className="text-2xl font-light text-white mb-2">Luxury Sedans</h3>
-                <p className="text-neutral-300">Perfect for executive travel and airport transfers</p>
-              </div>
-            </motion.div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <motion.div
+                className="relative group overflow-hidden rounded-lg"
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+              >
+                <img 
+                  alt="Mercedes-Benz S-Class luxury sedan" 
+                  className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110" 
+                  src="https://storage.googleapis.com/hostinger-horizons-assets-prod/146a1b3c-9425-4b69-8a09-f6c2ecb3458d/76e426fadfc2e97c7de32a36a49a2352.jpg" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                <div className="absolute bottom-6 left-6 right-6">
+                  <h3 className="text-2xl font-light text-white mb-2">Luxury Sedans</h3>
+                  <p className="text-neutral-300">Perfect for executive travel and airport transfers</p>
+                </div>
+              </motion.div>
 
-            <motion.div
-              className="relative group overflow-hidden rounded-lg"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-            >
-              <img 
-                alt="Cadillac Escalade luxury SUV" 
-                className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110" 
-                src="https://storage.googleapis.com/hostinger-horizons-assets-prod/146a1b3c-9425-4b69-8a09-f6c2ecb3458d/829eb6474d2ae45af8f9b84d81cac549.png" 
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-              <div className="absolute bottom-6 left-6 right-6">
-                <h3 className="text-2xl font-light text-white mb-2">Luxury SUVs</h3>
-                <p className="text-neutral-300">Spacious comfort for groups and families</p>
-              </div>
-            </motion.div>
+              <motion.div
+                className="relative group overflow-hidden rounded-lg"
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+              >
+                <img 
+                  alt="Cadillac Escalade luxury SUV" 
+                  className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110" 
+                  src="https://storage.googleapis.com/hostinger-horizons-assets-prod/146a1b3c-9425-4b69-8a09-f6c2ecb3458d/829eb6474d2ae45af8f9b84d81cac549.png" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                <div className="absolute bottom-6 left-6 right-6">
+                  <h3 className="text-2xl font-light text-white mb-2">Luxury SUVs</h3>
+                  <p className="text-neutral-300">Spacious comfort for groups and families</p>
+                </div>
+              </motion.div>
 
+            </div>
           </div>
 
           <div className="text-center mt-12">
