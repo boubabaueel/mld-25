@@ -46,11 +46,23 @@ import React from 'react';
           </Helmet>
 
           {/* Hero Section */}
-          <section className="relative h-screen flex items-center justify-center text-center px-4">
+          <section className="relative h-screen flex items-center justify-center text-center px-4 overflow-hidden">
+            {/* Background Image */}
+            <div className="absolute inset-0 z-0">
+              <img 
+                alt="Luxury car interior with city lights in background" 
+                className="absolute inset-0 w-full h-full object-cover" 
+                src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+              />
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/80"></div>
+              {/* Additional overlay for better text readability */}
+              <div className="absolute inset-0 bg-black/40"></div>
+            </div>
+            
             <div className="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
-            <img  alt="New York City skyline at dusk with illuminated skyscrapers" className="absolute inset-0 w-full h-full object-cover" src="https://images.unsplash.com/photo-1504701954957-f58a602749f2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
             <motion.div
-              className="relative z-20"
+              className="relative z-30"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
@@ -76,7 +88,13 @@ import React from 'react';
           </section>
 
           {/* Features Section */}
-          <section className="py-20 bg-transparent">
+          <section className="py-20 relative">
+            {/* Background for Features Section */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black via-neutral-900 to-black"></div>
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_20%,rgba(212,175,55,0.1),transparent_50%)]"></div>
+              <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_80%,rgba(212,175,55,0.1),transparent_50%)]"></div>
+            </div>
             <div className="container mx-auto px-4">
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
                 Why Choose <span className="text-amber-400">MLDLUXURY</span>?
@@ -102,8 +120,18 @@ import React from 'react';
           </section>
 
           {/* Fleet Highlights */}
-          <section className="py-20 bg-transparent">
+          <section className="py-20 relative">
+            {/* Background for Fleet Section */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black via-neutral-800 to-neutral-900"></div>
+            <div className="absolute inset-0 opacity-5">
+              <img 
+                alt="Abstract luxury pattern" 
+                className="w-full h-full object-cover" 
+                src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+              />
+            </div>
              <div className="container mx-auto px-4">
+                <div className="relative z-10">
                 <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Our Premier Fleet</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                   <FleetHighlightCard name="Mercedes-Benz S 580">
@@ -123,6 +151,7 @@ import React from 'react';
                    <Button asChild variant="outline" size="lg" className="border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-black transition-colors rounded-full px-8 py-4 text-lg">
                       <Link to="/fleet">View All Vehicles</Link>
                    </Button>
+                </div>
                 </div>
              </div>
           </section>
