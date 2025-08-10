@@ -42,6 +42,7 @@
             </div>
             <div>
               <p className="font-semibold text-lg text-amber-400 tracking-wider">Service Areas</p>
+              
               <div className="mt-4 text-sm text-neutral-400">
                 <p className="mb-3 font-medium text-neutral-300">Complete Coverage</p>
                 <div className="grid grid-cols-1 gap-1">
