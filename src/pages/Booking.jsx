@@ -39,7 +39,7 @@ const Booking = () => {
     try {
       // Replace these with your actual EmailJS credentials
       const result = await emailjs.send(
-        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
+        'service_60kdwsj', // Replace with your EmailJS service ID
         'YOUR_BOOKING_TEMPLATE_ID', // Replace with your EmailJS booking template ID
         {
           pickup_date: formData.pickup_date,
