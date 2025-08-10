@@ -49,6 +49,10 @@
                     <Label htmlFor="email">Email Address</Label>
                     <Input id="email" name="email" type="email" placeholder="your.email@example.com" required className="mt-2 bg-neutral-800 border-neutral-700 text-white"/>
                   </div>
+                  <div>
+                    <Label htmlFor="phone">Phone Number</Label>
+                    <Input id="phone" name="phone" type="tel" placeholder="(123) 456-7890" required className="mt-2 bg-neutral-800 border-neutral-700 text-white"/>
+                  </div>
                    <div>
                     <Label htmlFor="subject">Subject</Label>
                     <Input id="subject" name="subject" placeholder="e.g., Booking Inquiry" required className="mt-2 bg-neutral-800 border-neutral-700 text-white"/>
