@@ -29,7 +29,11 @@ import React from 'react';
                  animate={{ opacity: 1, x: 0 }}
                  transition={{ duration: 0.8, delay: 0.2 }}
               >
-                <img-replace alt="Professional chauffeur opening a car door for a client" className="rounded-lg shadow-lg w-full h-auto object-cover"/>
+                <img 
+                  src="/NYC Evening.jpg" 
+                  alt="New York City evening skyline" 
+                  className="rounded-lg shadow-lg w-full h-auto object-cover"
+                />
               </motion.div>
               <motion.div
                  initial={{ opacity: 0, x: 50 }}
