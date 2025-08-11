@@ -209,6 +209,13 @@ const Contact = () => {
                         <a href="tel:+19170000000" className="text-neutral-400 hover:text-amber-300 transition">(917) 000-0000</a>
                     </div>
                 </div>
+                <div className="mt-8">
+                  <img 
+                    src="/NYC Evening.jpg" 
+                    alt="New York City evening skyline" 
+                    className="w-full h-64 object-cover rounded-lg shadow-lg"
+                  />
+                </div>
              </div>
           </motion.div>
 
