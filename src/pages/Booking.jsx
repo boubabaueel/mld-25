@@ -51,7 +51,7 @@ const Booking = () => {
           from_email: formData.email,
           phone: formData.phone,
           special_requests: formData.special_requests,
-          to_email: 'boubabaauel@gmail.com'
+          to_email: 'info@mldluxury.com'
         },
         'EGOCLKVYBJ8Oczz1K' // Replace with your EmailJS public key
       );

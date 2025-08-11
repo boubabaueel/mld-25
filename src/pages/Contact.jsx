@@ -42,7 +42,7 @@ const Contact = () => {
           phone: formData.phone,
           subject: formData.subject,
           message: formData.message,
-          to_email: 'boubabaauel@gmail.com'
+          to_email: 'info@mldluxury.com'
         },
         'EGOCLKVYBJ8Oczz1K' // Replace with your EmailJS public key
       );

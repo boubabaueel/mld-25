@@ -209,17 +209,12 @@ const Home = () => {
                 <div className="flex flex-col items-center">
                   <Phone className="w-8 h-8 text-amber-400 mb-4" />
                   <h3 className="text-lg font-medium text-white mb-2">Call Us</h3>
-                  <p className="text-neutral-300">(123) 456-7890</p>
+                  <p className="text-neutral-300">(917) 000-0000</p>
                 </div>
                 <div className="flex flex-col items-center">
                   <Mail className="w-8 h-8 text-amber-400 mb-4" />
                   <h3 className="text-lg font-medium text-white mb-2">Email Us</h3>
-                  <p className="text-neutral-300">contact@mldluxury.com</p>
-                </div>
-                <div className="flex flex-col items-center">
-                  <MapPin className="w-8 h-8 text-amber-400 mb-4" />
-                  <h3 className="text-lg font-medium text-white mb-2">Visit Us</h3>
-                  <p className="text-neutral-300">123 Luxury Lane, NYC</p>
+                  <p className="text-neutral-300">info@mldluxury.com</p>
                 </div>
               </div>
 

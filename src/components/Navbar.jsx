@@ -148,7 +148,7 @@ const Navbar = () => {
                   className="flex items-center space-x-2 text-sm text-silver hover:text-gold transition-colors"
                 >
                   <Phone size={16} />
-                  <span>(555) 123-LUXURY</span>
+                  <span>(917) 000-0000</span>
                 </button>
                 <button
                   onClick={handleEmail}

@@ -56,7 +56,7 @@
               className="md:hidden bg-black px-4 pt-2 pb-4 space-y-2"
             >
               {navLinks.map((link) => (
-                <NavLink
+              <span>(917) 000-0000</span>
                   key={link.name}
                   to={link.path}
                   onClick={() => setIsOpen(false)}
