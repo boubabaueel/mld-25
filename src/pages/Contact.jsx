@@ -195,38 +195,20 @@ const Contact = () => {
           >
              <h2 className="text-3xl font-bold mb-6 text-amber-400">Contact Information</h2>
              <div className="space-y-6 text-lg">
-                <div className="flex items-start">
-                    <MapPin className="w-8 h-8 text-amber-400 mr-4 mt-1"/>
-                    <div>
-                        <p className="font-semibold">Our Office</p>
-                        <p className="text-neutral-400">123 Luxury Lane, Suite 100<br/>New York, NY 10001</p>
-                    </div>
-                </div>
                  <div className="flex items-start">
                     <Mail className="w-8 h-8 text-amber-400 mr-4 mt-1"/>
                     <div>
                         <p className="font-semibold">Email Us</p>
-                        <a href="mailto:boubabaauel@gmail.com" className="text-neutral-400 hover:text-amber-300 transition">boubabaauel@gmail.com</a>
+                        <a href="mailto:info@mldluxury.com" className="text-neutral-400 hover:text-amber-300 transition">info@mldluxury.com</a>
                     </div>
                 </div>
                  <div className="flex items-start">
                     <Phone className="w-8 h-8 text-amber-400 mr-4 mt-1"/>
                     <div>
                         <p className="font-semibold">Call Us</p>
-                        <a href="tel:+11234567890" className="text-neutral-400 hover:text-amber-300 transition">(123) 456-7890</a>
+                        <a href="tel:+19170000000" className="text-neutral-400 hover:text-amber-300 transition">(917) 000-0000</a>
                     </div>
                 </div>
-             </div>
-             <div className="mt-10">
-               <iframe 
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=-74.00833129882814%2C40.71087593255648%2C-73.98394584655763%2C40.72517881992167&layer=mapnik" 
-                  style={{border: 0, borderRadius: '8px'}} 
-                  className="w-full h-80"
-                  allowFullScreen="" 
-                  loading="lazy" 
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="MLDLUXURY Office Location"
-                ></iframe>
              </div>
           </motion.div>
 
