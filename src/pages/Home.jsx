@@ -30,7 +30,7 @@ const Home = () => {
         {/* Background with overlay */}
         <div className="absolute inset-0 z-0" style={{
           backgroundImage: 'url(/hero-luxury-car.jpg)',
-          backgroundSize: 'cover',
+          backgroundSize: 'contain',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
         }}>
