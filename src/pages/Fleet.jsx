@@ -52,7 +52,7 @@ import React from 'react';
         capacity: 7,
         luggage: 6,
         features: ['Three-Row Seating', 'Premium Audio', 'Advanced Safety Features'],
-        image: <img alt="A sophisticated black luxury SUV" className="w-full h-64 object-cover rounded-t-lg" src="https://images.pexels.com/photos/244206/pexels-photo-244206.jpeg?auto=compress&cs=tinysrgb&w=600" />
+        image: <img alt="Cadillac XT6 luxury SUV" className="w-full h-64 object-cover rounded-t-lg" src="/xt6.webp" />
       },
     ];
 
