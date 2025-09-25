@@ -30,8 +30,8 @@ import React from 'react';
                  transition={{ duration: 0.8, delay: 0.2 }}
               >
                 <img 
-                  src="/NYC Evening.jpg" 
-                  alt="New York City evening skyline" 
+                  src="https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                  alt="Luxury car interior with premium leather and modern dashboard" 
                   className="rounded-lg shadow-lg w-full h-auto object-cover"
                 />
               </motion.div>
