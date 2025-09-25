@@ -211,7 +211,7 @@ const Contact = () => {
                 </div>
                 <div className="mt-8">
                   <img 
-                    src="/NYC Evening.jpg" 
+                    src="https://images.pexels.com/photos/466685/pexels-photo-466685.jpeg?auto=compress&cs=tinysrgb&w=800" 
                     alt="New York City evening skyline" 
                     className="w-full h-64 object-cover rounded-lg shadow-lg"
                   />
